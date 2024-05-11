@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="container">
+
+            <div class="left-box">
+                <p class="head">HTML , CSS & Javascript</p>
+                <h2>Random Password</h2>
+                <h1>Generator</h1>
+                <p class="intro">Made By : M. Huzaifa</p>
+            </div>
+            <div class="right-box">
+                <div class="image-box">
+                    <img src="./assets/lock.gif" alt="Image">
+                </div>
+                <div class="input-box">
+                    <input type="password" id="input">
+
+                    <div id="input-icon">
+                        <i class="fa-solid fa-eye" id="show-pass"></i>
+                        <i class="fa-solid fa-eye-slash" id="hide-pass"></i>
+                    </div>
+                </div>
+
+                <div class="check-password">
+                    <i class="fa-solid fa-circle-check pass" id="strong-pass">Strong Password</i>
+                    <i class="fa-solid fa-circle-xmark pass" id="weak-pass">Weak Password</i>
+
+                </div>
+
+                <div class="slider-box">
+                    <input type="range" min="1" max="20" value="10" name="" id="slider">
+                </div>
+                <div class="length-container">
+                    <div class="length-box">
+                        <p>Character Length : <span id="slider-length"> 00</span></p>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="upper-case">
+                        <label for="">A-Z</label>
+                        <input type="checkbox" id="lower-case">
+                        <label for="">a-z</label>
+                        <input type="checkbox" id="number">
+                        <label for="">0-9</label>
+                        <input type="checkbox" id="symbol">
+                        <label for="">%$&</label>
+                    </div>
+
+                </div>
+
+
+                <div class="button">
+                    <a href="#" class="hbtn hb-fill-middle2" id="btn" onclick="generatePassword()">Generate Password</a>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
