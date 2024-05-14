@@ -15,6 +15,7 @@ var capitalAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var smallAlpha = "abcdefghijklmnopqrstuvwxyz";
 var numbers = 1234567890;
 var symbols = "!@#$%^&*()_+";
+input.value = "";
 
 // Show & Hide Password 
 
@@ -40,7 +41,6 @@ slider.oninput = function () {
     sliderLength.textContent = this.value
 }
 // Generating Password 
-
 var result = "";
 var password = "";
 
@@ -53,14 +53,17 @@ function generatePassword() {
         symbol.checked
     ) {
         result += capitalAlpha + smallAlpha + numbers + symbols;
+        strongPass.style.display = "block";
+        weakPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
         !smallLetter.checked &&
         !number.checked &&
         !symbol.checked
-    ) {
+       ) {
         result += capitalAlpha;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -69,6 +72,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += smallAlpha;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -77,6 +81,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += numbers;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -85,6 +90,7 @@ function generatePassword() {
         symbol.checked
     ) {
         result += symbols;
+        strongPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
@@ -93,6 +99,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += capitalAlpha + smallAlpha;
+        strongPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
@@ -101,6 +108,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += capitalAlpha + numbers;
+        strongPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
@@ -109,6 +117,7 @@ function generatePassword() {
         symbol.checked
     ) {
         result += capitalAlpha + symbols;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -117,6 +126,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += smallAlpha +numbers;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -125,6 +135,7 @@ function generatePassword() {
         symbol.checked
     ) {
         result += smallAlpha + symbols;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -133,6 +144,7 @@ function generatePassword() {
         symbol.checked
     ) {
         result += numbers + symbols;
+        strongPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
@@ -141,6 +153,7 @@ function generatePassword() {
         !symbol.checked
     ) {
         result += capitalAlpha + smallAlpha + numbers;
+        strongPass.style.display = "none";
     }
     else if (
         !capitalLetter.checked &&
@@ -149,6 +162,7 @@ function generatePassword() {
         symbol.checked
     ) {
         result += symbols+ smallAlpha+ numbers;
+        strongPass.style.display = "none";
     }
     else if (
         capitalLetter.checked &&
@@ -157,8 +171,11 @@ function generatePassword() {
         symbol.checked
     ) {
         result += symbols+ capitalAlpha+ numbers;
+        strongPass.style.display = "none";
     } else {
-        input.value = "Check Alphabet"
+        input.value = "At least check one checkbox";
+        strongPass.style.display = "none";
+        return;
     }
 
     for (i = 0; i < sliderLength.textContent; i++) {
